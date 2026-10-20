@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro'
+import { buscarVitrine, linkWhatsapp } from '../lib/vitrine'
+
+const dados = await buscarVitrine()
+const marca =
+  dados.identidade?.nomeDoSite?.trim() ||
+  dados.identidade?.fotografo?.trim() ||
+  dados.identidade?.primeiroNome?.trim() ||
+  'Seu site'
+const especialidade = dados.inicio?.especialidade?.trim() || 'Estúdio Sites'
+const frase =
+  dados.inicio?.frase?.trim() ||
+  'Edite o layout neste repositório. Textos e preços vêm do painel (vitrine ao vivo).'
+const whatsapp = linkWhatsapp(dados)
+---
+
+<Base titulo={marca} descricao={frase}>
+  <div class="pagina">
+    <header class="topo">{marca}</header>
+    <main class="hero">
+      <p class="especialidade">{especialidade}</p>
+      <h1>{marca}</h1>
+      <p class="frase">{frase}</p>
+      {
+        whatsapp ? (
+          <a class="cta" href={whatsapp} target="_blank" rel="noopener noreferrer">
+            Falar no WhatsApp
+          </a>
+        ) : (
+          <p class="frase">Configure o WhatsApp no painel para aparecer o botão.</p>
+        )
+      }
+    </main>
+    <footer class="rodape">
+      Layout neste Git · conteúdo no painel Estúdio Sites
+      {import.meta.env.SITE_TENANT ? ` · ${import.meta.env.SITE_TENANT}` : ''}
+    </footer>
+  </div>
+</Base>

@@ -1,0 +1,23 @@
+---
+import '../styles/global.css'
+
+type Props = {
+  titulo: string
+  descricao?: string
+}
+
+const { titulo, descricao } = Astro.props
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={descricao || titulo} />
+    <title>{titulo}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

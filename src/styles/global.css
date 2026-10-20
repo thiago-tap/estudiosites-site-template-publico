@@ -1,0 +1,99 @@
+:root {
+  --fundo: #f7f4ef;
+  --tinta: #1c1a17;
+  --destaque: #2f4a3c;
+  --linha: color-mix(in srgb, var(--tinta) 12%, transparent);
+  --fonte-titulo: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+  --fonte-texto: 'Segoe UI', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--fonte-texto);
+  color: var(--tinta);
+  background:
+    radial-gradient(120% 80% at 10% 0%, color-mix(in srgb, var(--destaque) 10%, transparent), transparent 55%),
+    var(--fundo);
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+}
+
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topo {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--linha);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero {
+  flex: 1;
+  display: grid;
+  align-content: center;
+  gap: 1.25rem;
+  padding: 4rem 1.5rem 5rem;
+  max-width: 40rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.hero .especialidade {
+  margin: 0;
+  color: color-mix(in srgb, var(--tinta) 65%, transparent);
+  letter-spacing: 0.04em;
+}
+
+.hero .frase {
+  margin: 0;
+  font-size: 1.125rem;
+  max-width: 32rem;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  padding: 0.85rem 1.35rem;
+  background: var(--destaque);
+  color: #f7f4ef;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.cta:hover {
+  filter: brightness(1.05);
+}
+
+.rodape {
+  padding: 1rem 1.5rem 1.5rem;
+  border-top: 1px solid var(--linha);
+  font-size: 0.8rem;
+  color: color-mix(in srgb, var(--tinta) 55%, transparent);
+}
