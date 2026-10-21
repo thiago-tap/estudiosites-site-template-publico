@@ -1,1 +1,1 @@
-__CURSOR_LOAD_FILE__/tmp/tpl-pnpm-lock.yaml
+{{include:/tmp/tpl-pnpm-lock.yaml}}
