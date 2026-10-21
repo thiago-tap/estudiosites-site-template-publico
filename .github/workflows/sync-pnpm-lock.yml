@@ -1,6 +1,9 @@
 name: sync-pnpm-lock
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '_trigger_sync_lock'
 permissions:
   contents: write
 jobs:
