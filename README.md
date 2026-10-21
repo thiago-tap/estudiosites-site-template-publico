@@ -1,15 +1,20 @@
 # Template de site personalizado (Estúdio Sites)
 
+Requer **Node.js ≥ 24** (mesmo `.nvmrc` do monorepo) e pnpm.
+
 Scaffold mínimo **Astro + Cloudflare Workers** para clientes com origem Git.
 
 - **Layout / código:** este repositório (edite depois que o painel gerar o repo do cliente).
 - **Textos / preços:** painel Payload via `GET /api/site-vitrine/:slug` (ao vivo).
 
-Espelho público do template. O repo privado `thiago-tap/estudiosites-site-template` tem o mesmo conteúdo (visível só logado como thiago-tap).
+## Onde está no GitHub
+
+- Público (visível sem login): https://github.com/thiago-tap/estudiosites-site-template-publico  
+- Privado (mesmo conteúdo): https://github.com/thiago-tap/estudiosites-site-template  
 
 ## Configurar uma vez
 
-1. Neste repo: **Settings → General → Template repository** (marque a caixa).
+1. No GitHub → **Settings → General → Template repository** (marque a caixa).
 2. No EasyPanel (app painel) → Environment:
 
 ```bash
